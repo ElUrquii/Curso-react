@@ -2,12 +2,20 @@ import React from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
+  let t_dinamico = "";
+
+  const titleChangeHandler = (event) => {
+    t_dinamico = event.target.value;
+    console.log(t_dinamico);
+    return t_dinamico;
+  };
+
   return (
     <form>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" />
+          <input type="text" onChange={titleChangeHandler} />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
